@@ -14,3 +14,5 @@
 [] .nvmrc
 [] Exemplo de teste de estresse
 [] Autenticação básica JWT
+[] Modificar README
+[] Repositório base para lidar com coisas tipo softDelete, etc
