@@ -10,7 +10,7 @@
     "build": "nest build",
     "format": "biome format --write ./src",
     "start": "nest start",
-    "start:dev": "nest start --watch",
+    "dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main",
     "lint": "biome lint --error-on-warnings",
@@ -24,14 +24,18 @@
   "dependencies": {
     "@mikro-orm/core": "^6.4.16",
     "@mikro-orm/postgresql": "^6.4.16",
+    "@nestjs/cache-manager": "^3.0.1",
     "@nestjs/common": "^11.0.1",
     "@nestjs/core": "^11.0.1",
     "@nestjs/platform-express": "^11.0.1",
+    "cache-manager": "^7.0.1",
+    "dotenv": "^17.2.1",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.1"
   },
   "devDependencies": {
     "@biomejs/biome": "2.1.2",
+    "@keyv/redis": "^5.0.0",
     "@nestjs/cli": "^11.0.0",
     "@nestjs/schematics": "^11.0.0",
     "@nestjs/testing": "^11.0.1",
