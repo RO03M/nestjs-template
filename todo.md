@@ -1,17 +1,17 @@
-[] Setup testes e2e
+[x] Setup testes e2e
 [] Setup MikroORM
-[] Pasta com utilitários
+[x] Pasta com utilitários
 [] Exemplo de migration
 [] Exemplo de seeder
 [] Entidade de usuário base para demo
-[] Setup redis
+[x] Setup redis
 [] Setup bullmq/queue
 [] Scripts básicos no package.json
 [] Github actions
-[] Lefthook
-[] Setup biome
+[x] Lefthook
+[x] Setup biome
 [] Adicionar vitest
-[] .nvmrc
+[x] .nvmrc
 [] Exemplo de teste de estresse
 [] Autenticação básica JWT
 [] Modificar README
