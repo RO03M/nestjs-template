@@ -18,4 +18,11 @@ export class AuthController {
 
 		return res;
 	}
+
+	@Get("no-trash")
+	public async notrash() {
+		const res = await this.em.getRepository(User).noTrash().execute();
+
+		return res;
+	}
 }

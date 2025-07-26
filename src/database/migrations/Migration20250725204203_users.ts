@@ -9,10 +9,11 @@ export class Migration20250725204203_users extends Migration {
 			table.string("username").notNullable();
 			table.string("password").notNullable();
 			table.timestamps();
+			table.timestamp("deleted_at").nullable();
 		});
 	}
 
 	override async down(): Promise<void> {
-		this.getKnex().schema.dropTableIfExists("users");
+		await this.getKnex().schema.dropTable("users");
 	}
 }

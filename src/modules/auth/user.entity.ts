@@ -1,9 +1,16 @@
 import { randomUUID } from "node:crypto";
-import { Entity, PrimaryKey, Property } from "@mikro-orm/core";
-import { BaseEntity } from "src/database/base-entity";
+import {
+	Entity,
+	EntityRepositoryType,
+	PrimaryKey,
+	Property
+} from "@mikro-orm/core";
+import { BaseRepository } from "../../database/base-repository";
 
-@Entity({ tableName: "users" })
-export class User extends BaseEntity {
+@Entity({ tableName: "users", repository: () => BaseRepository<User> })
+export class User {
+	[EntityRepositoryType]?: BaseRepository<User>;
+
 	@PrimaryKey()
 	public id: string;
 
@@ -25,8 +32,10 @@ export class User extends BaseEntity {
 	@Property({ type: "timestamp" })
 	public updated_at?: Date = new Date();
 
+	@Property({ type: "timestamp" })
+	public deleted_at: Date | null = null;
+
 	constructor(name: string, email: string, username: string, password: string) {
-		super();
 		this.id = randomUUID();
 		this.name = name;
 		this.email = email;
