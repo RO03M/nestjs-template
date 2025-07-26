@@ -6,4 +6,10 @@ export class BaseRepository<
 	public noTrash() {
 		return this.createQueryBuilder().where({ deleted_at: null });
 	}
+
+	public paginate(perPage = 15, pageIndex = 0) {
+		return this.createQueryBuilder()
+			.limit(perPage)
+			.offset(perPage * pageIndex);
+	}
 }

@@ -1,5 +1,5 @@
 import { EntityManager } from "@mikro-orm/postgresql";
-import { Controller, Get } from "@nestjs/common";
+import { Controller, Get, Query } from "@nestjs/common";
 import { User } from "./user.entity";
 
 @Controller("auth")
@@ -20,8 +20,8 @@ export class AuthController {
 	}
 
 	@Get("no-trash")
-	public async notrash() {
-		const res = await this.em.getRepository(User).noTrash().execute();
+	public async notrash(@Query("page") page: string) {
+		const res = await this.em.getRepository(User).paginate(15, +page).execute();
 
 		return res;
 	}
