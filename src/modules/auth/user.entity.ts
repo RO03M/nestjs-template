@@ -36,11 +36,14 @@ export class User {
 	@Property({ type: "timestamp" })
 	public deleted_at: Date | null = null;
 
-	constructor(name: string, email: string, username: string, password: string) {
-		this.id = randomUUID();
-		this.name = name;
-		this.email = email;
-		this.username = username;
-		this.password = Hash.make(password);
+	static make(name: string, email: string, username: string, password: string) {
+		const user = new User();
+		user.id = randomUUID();
+		user.name = name;
+		user.email = email;
+		user.username = username;
+		user.password = Hash.make(password);
+
+		return user;
 	}
 }

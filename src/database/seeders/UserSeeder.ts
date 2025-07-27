@@ -9,7 +9,7 @@ export class UserSeeder extends Seeder {
 
 		for (let i = 0; i < 100; i++) {
 			users.push(
-				new User(
+				User.make(
 					faker.person.fullName(),
 					faker.internet.email(),
 					faker.internet.username(),

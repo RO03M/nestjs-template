@@ -18,6 +18,7 @@ import { Hash } from "../../utils/hash";
 import { Duration, sleep } from "../../utils/time";
 import { LoginDto } from "./dto/login.dto";
 import { RegisterDto } from "./dto/register.dto";
+import { AccessToken } from "./types";
 import { User } from "./user.entity";
 
 @Controller("auth")
@@ -31,7 +32,7 @@ export class AuthController {
 
 	@Post("/register")
 	public async register(@Body() body: RegisterDto) {
-		const user = new User(body.name, body.email, body.username, body.password);
+		const user = User.make(body.name, body.email, body.username, body.password);
 
 		const result = await this.em
 			.createQueryBuilder(User)
@@ -78,7 +79,8 @@ export class AuthController {
 			throw new UnauthorizedException("Wrong password");
 		}
 
-		const accessToken = this.jwt.sign({ uid: user.id });
+		const payload: AccessToken = { uid: user.id };
+		const accessToken = this.jwt.sign(payload);
 
 		await this.cache.del(loginAttemptsKey);
 
@@ -96,7 +98,7 @@ export class AuthController {
 
 	@Get()
 	public async foo() {
-		const user = new User("teste", "teste@teste.com", "username", "password");
+		const user = User.make("teste", "teste@teste.com", "username", "password");
 		await this.em.createQueryBuilder(User).insert(user);
 
 		const res = await this.em
