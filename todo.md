@@ -5,15 +5,17 @@
 [x] Exemplo de seeder
 [x] Entidade de usuário base para demo
 [x] Setup redis
-[] Setup bullmq/queue
+[x] Setup bullmq/queue
 [x] Scripts básicos no package.json
-[] Github actions
 [x] Lefthook
 [x] Setup biome
-[] Adicionar vitest
 [x] .nvmrc
-[] Exemplo de teste de estresse
+[x] Exemplo de teste de estresse
+[x] Repositório base para lidar com coisas tipo softDelete, etc
+[x] Repositório paginação
+[] Rate limiter
+[] Adicionar vitest
 [] Autenticação básica JWT
 [] Modificar README
-[x] Repositório base para lidar com coisas tipo softDelete, etc
-[] Repositório paginação
+[] Github actions
+[] Config do k6/teste de estresse com docker para ficar automatizado

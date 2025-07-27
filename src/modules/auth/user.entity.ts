@@ -6,6 +6,7 @@ import {
 	Property
 } from "@mikro-orm/core";
 import { BaseRepository } from "../../database/base-repository";
+import { Hash } from "../../utils/hash";
 
 @Entity({ tableName: "users", repository: () => BaseRepository<User> })
 export class User {
@@ -40,6 +41,6 @@ export class User {
 		this.name = name;
 		this.email = email;
 		this.username = username;
-		this.password = password;
+		this.password = Hash.make(password);
 	}
 }
