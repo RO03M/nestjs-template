@@ -9,13 +9,13 @@ export const options = {
 	},
 	stages: [
 		{ duration: "1m", target: 15 }, // Ramp up to 100 users over 2 minutes
-		{ duration: "2m", target: 100 }, // Stay at 100 users for 5 minutes
-		{ duration: "1m", target: 100 }, // Ramp up to 200 users over 2 minutes
-		{ duration: "4m", target: 50 } // Ramp up to 200 users over 2 minutes
+		{ duration: "1m", target: 50 }, // Stay at 100 users for 5 minutes
+		{ duration: "1m", target: 150 }, // Ramp up to 200 users over 2 minutes
+		{ duration: "2m", target: 10 } // Ramp up to 200 users over 2 minutes
 	]
 };
 
-const PORT = 3000;
+const PORT = 9999;
 const BASE_URL = `http://localhost:${PORT}`;
 
 export default function () {

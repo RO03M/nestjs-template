@@ -15,7 +15,9 @@
 [x] Repositório paginação
 [] Rate limiter
 [] Adicionar vitest
-[] Autenticação básica JWT
+[x] Autenticação básica JWT
 [] Modificar README
 [] Github actions
 [] Config do k6/teste de estresse com docker para ficar automatizado
+[] nginx no docker compose
+[] colocar no docker compose o container da api
